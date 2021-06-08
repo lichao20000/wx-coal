@@ -63,9 +63,7 @@ if (process.env.MODE_ENV === 'separate') {
         // https://github.com/kangax/html-minifier#options-quick-reference
       },
       // necessary to consistently work with multiple chunks via CommonsChunkPlugin
-      chunksSortMode: 'dependency',
-      saStaticSrc: process.env.BUILD_ENV === 'utest' ? `./static/pagelog_test.js` : `./static/pagelogwxx.js`,
-      newSaSrc: process.env.BUILD_ENV === 'utest' ? `https://wxst.newbuy.chinaunicom.cn/sa/sa.test.js` : `https://wxst.newbuy.chinaunicom.cn/sa/sa.min.js`
+      chunksSortMode: 'dependency'
     }))
   }
 }
