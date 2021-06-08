@@ -32,9 +32,7 @@ for (let module of moduleList) {
     template: `./src/modules/${module}/index.html`,
     inject: true,
     chunks: [module],
-    multihtmlCache: true,
-    saStaticSrc: `https://wxst.newbuy.chinaunicom.cn/sa/sa.test.js`,
-    newSaSrc: `https://wxst.newbuy.chinaunicom.cn/sa/sa.test.js`
+    multihtmlCache: true
   }))
 }
 const devWebpackConfig = merge(baseWebpackConfig, {
@@ -76,9 +74,6 @@ const devWebpackConfig = merge(baseWebpackConfig, {
         html += `<a href="/${module}/" target="_blank">${module.toString()}</a><br>`
       }
       html += `</div>`
-      html += `<div class="module-container">
-        <iframe src="/${moduleList[0]}/" name="container" frameborder="0"></iframe>
-      </div>`
       html += `</body></html>`
       app.get('/moduleList', (req, res, next) => {
         res.send(html)
